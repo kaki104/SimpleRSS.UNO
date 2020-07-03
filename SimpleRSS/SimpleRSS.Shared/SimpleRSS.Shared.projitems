@@ -19,6 +19,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Commons\BasicExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UserAgentHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RSSChannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RSSItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\RssService.cs" />
@@ -30,6 +31,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)_Converters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using SimpleRSS.Shared.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,6 +34,12 @@ namespace SimpleRSS
 
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+#if NETFX_CORE
+            //User-Agent의 헤더 텍스트 입력
+            UserAgentHelper.SetDefaultUserAgent(
+                "Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 950) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Mobile Safari/537.36 Edge/15.14900");
+#endif
         }
 
         /// <summary>
